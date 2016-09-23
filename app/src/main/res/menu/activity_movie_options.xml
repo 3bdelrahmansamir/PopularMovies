@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".movieslist.MoviesActivity">
+
+    <item
+        android:id="@+id/refresh_movies"
+        android:title="Refresh"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/settings_movies"
+        android:title="Settings"
+        app:showAsAction="always" />
+
+</menu>
