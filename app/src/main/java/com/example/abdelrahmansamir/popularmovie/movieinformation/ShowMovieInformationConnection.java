@@ -160,7 +160,6 @@ public class ShowMovieInformationConnection extends AsyncTask<String, Void, Stri
             }
 
             ListView listView = (ListView) fragment.getView().findViewById(R.id.lv_trailers);
-            listView.setVisibility(View.INVISIBLE);
             TrailersAdapter trailersAdapter = new TrailersAdapter(objects, fragment.getActivity().getLayoutInflater());
             listView.setAdapter(trailersAdapter);
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -170,21 +169,6 @@ public class ShowMovieInformationConnection extends AsyncTask<String, Void, Stri
                 }
             });
             listView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 102 * objects.size()));
-            listView.setVisibility(View.VISIBLE);
-            trailersAdapter.notifyDataSetChanged();
-
-            Thread scroll = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Thread.sleep(60);
-                    } catch (InterruptedException e) {
-
-                    }
-                    fragment.getView().findViewById(R.id.sv_information).scrollTo(0, 0);
-                }
-            });
-            scroll.start();
         }
     }
 }
